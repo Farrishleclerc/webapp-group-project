@@ -80,8 +80,13 @@ The primary objective is to develop a full-featured web application that simplif
 	•	Delete: Users can remove or cancel their bookings when needed.
 
 
-- **Optional: Booking History**  
+- ** Booking History**  
   		•	Read: Shows the user’s past bookings, dates, and facility usage records for their reference.
+
+- ** Contact Us**  
+	•	Create: Users can send inquiries, complaints, or feedback by filling out a contact form that includes their name, matric/staff number, email, subject, and message.
+
+	•	Read: Users may view a status update or receive a confirmation email when their inquiry is replied to by the admin.
 
 
 ---
@@ -115,12 +120,12 @@ The primary objective is to develop a full-featured web application that simplif
 
 	•	Delete: Cancel bookings due to unforeseen circumstances.
 
-- **Optional: Booking Approval**  
+- **Booking Approval**  
   	•	Read: View pending booking requests.
   
 	•	Update: Admins can approve or reject bookings based on internal policies or availability.
 
-- **Optional: Usage Statistics**  
+- **Usage Statistics**  
   	•	Create: Automatically generate reports showing how often each facility is booked, peak usage times, and user activity over a defined period (daily, weekly, monthly).
   
 	•	Read: Admins can view graphs, charts, or tables summarizing booking frequency, popular time slots, and facility demand trends.
@@ -129,5 +134,14 @@ The primary objective is to develop a full-featured web application that simplif
 
 	•	Delete: (Optional) Admins can clear previously generated reports or reset statistics tracking for a new cycle.
 
+- **Contact Us**
+  
+  	•	Create: Allows admins to respond to user inquiries by composing a reply which is sent directly to the user’s registered email address.
+  
+	•	Read: Enables admins to view a list of all inquiries submitted by users, including name, matric/staff number, email, and message content.
+
+	•	Update: Admins can update or revise replies, or resend them if necessary.
+
+	•	Delete: Admins can delete inquiries that have been resolved or are no longer relevant.
 ---
 

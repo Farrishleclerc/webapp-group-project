@@ -28,7 +28,7 @@ Built using the **Model-View-Controller (MVC)** architecture of Laravel, the sys
 The primary objective is to develop a full-featured web application that simplifies the management and booking of sports facilities. Specific goals include:
 
 1. **Provide a User-Friendly Booking Platform**  
-   Users should be able to sign in through imaalum login, view available sports facilities, book available time slots, and manage their own reservations with ease.
+  Users should be able to register, view available sports facilities, book available time slots, and manage their own reservations with ease.
 
 2. **Utilize Laravel MVC Framework**  
    Implement the Laravel framework effectively using its routing system, Eloquent models, controllers, views (Blade), and built-in tools like middleware and validation.
@@ -49,41 +49,64 @@ The primary objective is to develop a full-featured web application that simplif
 ### User Side
 
 - **Register/Login**  
-  Users (students, staff) can sign in through imaalum securely.
+	•	Create: Allows users (students, staff) to create a new account using their email, matric/staff number, and a secure password.
+	•	Read: After logging in, users can access their account details, bookings, and available services.
+	•	Update: Users can update their personal information such as email or password.
+	•	Delete: Users can request to delete their account (if implemented).
 
 - **View Facilities**  
-  Display a list of available sports facilities such as futsal courts,volleyball courts, or football field.
+  	•	Read: Displays a list of all available sports facilities (e.g., futsal courts, volleyball courts, football field) including descriptions, images, and facility details.
 
 - **Check Availability**  
-  View available dates and time slots for each facility.
+  	•	Read: Allows users to check available dates and time slots for each facility before booking. The system checks for conflicts and displays only free slots.
 
 - **Book a Facility**  
-  Users can select a facility, choose a time slot, and confirm their booking.
+  	•	Create: Enables users to select a facility, date, and time, and submit a booking request. A confirmation is shown after successful submission.
+	•	Read: Users can view the booking details and status.
+	•	Update: Users can edit a booking before the session starts (subject to rules).
+	•	Delete: Users can cancel a booking within the allowed cancellation period.
 
 - **Manage Bookings**  
-  Users can view, update, or cancel their own bookings if necessary.
+  	•	Read: Displays all bookings made by the user with details such as time, date, and status.
+	•	Update: Users may reschedule or update their booking details.
+	•	Delete: Users can remove or cancel their bookings when needed.
+
 
 - **Optional: Booking History**  
-  Provide users with a history of past bookings for reference or recordkeeping.
+  		•	Read: Shows the user’s past bookings, dates, and facility usage records for their reference.
+
 
 ---
 
 ### Admin Side
 
 - **Facility Management**  
-  Add, edit, or delete sports facilities available for booking.
+  	•	Create: Admins can add new facilities including name, category (e.g., futsal, badminton), description, and image.
+	•	Read: Displays a list of all existing facilities.
+	•	Update: Admins can edit facility details if any changes occur (e.g., name, operating hours).
+	•	Delete: Admins can remove facilities that are no longer available.
 
 - **Time Slot Management**  
-  Set or adjust the available booking time slots for each facility.
+  	•	Create: Admin can define time slots available for booking per facility.
+	•	Read: Shows existing time slots and their statuses.
+	•	Update: Admin can adjust or reschedule time slots due to maintenance or changes.
+	•	Delete: Remove outdated or conflicting time slots.
 
 - **Booking Oversight**  
-  View and manage all bookings in the system.
+  	•	Create: Admins can manually add bookings for users if requested.
+	•	Read: View and filter all booking records in the system.
+	•	Update: Modify details of any booking (e.g., rescheduling, change user).
+	•	Delete: Cancel bookings due to unforeseen circumstances.
 
 - **Optional: Booking Approval**  
-  Implement a feature for admins to approve or deny booking requests, if needed.
+  	•	Read: View pending booking requests.
+	•	Update: Admins can approve or reject bookings based on internal policies or availability.
 
 - **Optional: Usage Statistics**  
-  Generate reports or statistics showing facility usage trends over time.
+  	•	Create: Automatically generate reports showing how often each facility is booked, peak usage times, and user activity over a defined period (daily, weekly, monthly).
+	•	Read: Admins can view graphs, charts, or tables summarizing booking frequency, popular time slots, and facility demand trends.
+	•	Update: Admins may apply filters (e.g., date range, facility type) to customize the data shown in the statistics report.
+	•	Delete: (Optional) Admins can clear previously generated reports or reset statistics tracking for a new cycle.
 
 ---
 

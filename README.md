@@ -28,7 +28,7 @@ Built using the **Model-View-Controller (MVC)** architecture of Laravel, the sys
 The primary objective is to develop a full-featured web application that simplifies the management and booking of sports facilities. Specific goals include:
 
 1. **Provide a User-Friendly Booking Platform**  
-   Users should be able to register, view available sports facilities, book available time slots, and manage their own reservations with ease.
+   Users should be able to sign in through imaalum login, view available sports facilities, book available time slots, and manage their own reservations with ease.
 
 2. **Utilize Laravel MVC Framework**  
    Implement the Laravel framework effectively using its routing system, Eloquent models, controllers, views (Blade), and built-in tools like middleware and validation.
@@ -49,7 +49,7 @@ The primary objective is to develop a full-featured web application that simplif
 ### User Side
 
 - **Register/Login**  
-  Users (students, staff) can create an account and sign in securely.
+  Users (students, staff) can sign in through imaalum securely.
 
 - **View Facilities**  
   Display a list of available sports facilities such as futsal courts,volleyball courts, or football field.

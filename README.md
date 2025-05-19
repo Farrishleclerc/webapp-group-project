@@ -68,7 +68,7 @@ The primary objective is to develop a full-featured web application that simplif
 
 ---
 
-### 🛠️ Admin Side
+### Admin Side
 
 - **Facility Management**  
   Add, edit, or delete sports facilities available for booking.

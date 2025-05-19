@@ -50,8 +50,11 @@ The primary objective is to develop a full-featured web application that simplif
 
 - **Register/Login**  
 	•	Create: Allows users (students, staff) to create a new account using their email, matric/staff number, and a secure password.
+
 	•	Read: After logging in, users can access their account details, bookings, and available services.
+
 	•	Update: Users can update their personal information such as email or password.
+
 	•	Delete: Users can request to delete their account (if implemented).
 
 - **View Facilities**  
@@ -62,13 +65,18 @@ The primary objective is to develop a full-featured web application that simplif
 
 - **Book a Facility**  
   	•	Create: Enables users to select a facility, date, and time, and submit a booking request. A confirmation is shown after successful submission.
+  
 	•	Read: Users can view the booking details and status.
+
 	•	Update: Users can edit a booking before the session starts (subject to rules).
+
 	•	Delete: Users can cancel a booking within the allowed cancellation period.
 
 - **Manage Bookings**  
   	•	Read: Displays all bookings made by the user with details such as time, date, and status.
+  
 	•	Update: Users may reschedule or update their booking details.
+
 	•	Delete: Users can remove or cancel their bookings when needed.
 
 
@@ -82,30 +90,43 @@ The primary objective is to develop a full-featured web application that simplif
 
 - **Facility Management**  
   	•	Create: Admins can add new facilities including name, category (e.g., futsal, badminton), description, and image.
+  
 	•	Read: Displays a list of all existing facilities.
+
 	•	Update: Admins can edit facility details if any changes occur (e.g., name, operating hours).
+
 	•	Delete: Admins can remove facilities that are no longer available.
 
 - **Time Slot Management**  
   	•	Create: Admin can define time slots available for booking per facility.
+  
 	•	Read: Shows existing time slots and their statuses.
+
 	•	Update: Admin can adjust or reschedule time slots due to maintenance or changes.
+
 	•	Delete: Remove outdated or conflicting time slots.
 
 - **Booking Oversight**  
   	•	Create: Admins can manually add bookings for users if requested.
+  
 	•	Read: View and filter all booking records in the system.
+
 	•	Update: Modify details of any booking (e.g., rescheduling, change user).
+
 	•	Delete: Cancel bookings due to unforeseen circumstances.
 
 - **Optional: Booking Approval**  
   	•	Read: View pending booking requests.
+  
 	•	Update: Admins can approve or reject bookings based on internal policies or availability.
 
 - **Optional: Usage Statistics**  
   	•	Create: Automatically generate reports showing how often each facility is booked, peak usage times, and user activity over a defined period (daily, weekly, monthly).
+  
 	•	Read: Admins can view graphs, charts, or tables summarizing booking frequency, popular time slots, and facility demand trends.
+
 	•	Update: Admins may apply filters (e.g., date range, facility type) to customize the data shown in the statistics report.
+
 	•	Delete: (Optional) Admins can clear previously generated reports or reset statistics tracking for a new cycle.
 
 ---

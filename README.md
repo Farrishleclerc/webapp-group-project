@@ -150,7 +150,7 @@ The primary objective is to develop a full-featured web application that simplif
 
 - **SEQUENCE DIAGRAM**
 
-![sqd1](https://github.com/user-attachments/assets/1cb3227e-98ec-40e1-a33e-95ca5f665209)
+
 
 ---
 

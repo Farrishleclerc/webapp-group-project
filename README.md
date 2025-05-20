@@ -144,4 +144,19 @@ The primary objective is to develop a full-featured web application that simplif
 
 	•	Delete: Admins can delete inquiries that have been resolved or are no longer relevant.
 ---
+- **ERD DIAGRAM**
+- 
+---
+
+- **SEQUENCE DIAGRAM**
+
+![sqd1](https://github.com/user-attachments/assets/1cb3227e-98ec-40e1-a33e-95ca5f665209)
+
+---
+
+- **MOCKUPS**
+
+  ---
+
+
 

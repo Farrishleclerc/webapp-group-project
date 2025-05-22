@@ -168,13 +168,15 @@ The primary objective is to develop a full-featured web application that simplif
 
 - **MOCKUPS**
 
-![image](https://github.com/user-attachments/assets/3361d00c-98b9-475c-9d37-887dd738a90d)
-
 ![image](https://github.com/user-attachments/assets/1361518c-be44-4d8c-9c25-0c31018370ac)
 
 ![image](https://github.com/user-attachments/assets/1431b524-553b-48f5-8ab2-b4626122b0aa)
 
-![image](https://github.com/user-attachments/assets/de4ffc52-5dce-4c44-a296-de20658b2e65)
+![image](https://github.com/user-attachments/assets/3361d00c-98b9-475c-9d37-887dd738a90d)
+
+![image](https://github.com/user-attachments/assets/5c5aec25-53e8-4b29-a37b-7efe7ea631c7)
+
+![image](https://github.com/user-attachments/assets/9a618b8a-7785-4627-b8ec-e35bdbd10eba)
 
 ![image](https://github.com/user-attachments/assets/4080df11-2136-4bf0-8c74-1d86eabdcfd0)
 

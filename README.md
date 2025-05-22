@@ -154,8 +154,9 @@ The primary objective is to develop a full-featured web application that simplif
 - **Read**: Generate financial reports by user, facility, or date for tracking service fee collections and audit purposes.
 ---
 - **ERD DIAGRAM**
-  
-  ![image](https://github.com/user-attachments/assets/e732628e-d413-467f-a954-caca9263327e)
+
+  ![image](https://github.com/user-attachments/assets/6686979b-f266-47cd-9ffd-e266a77011f7)
+
 
 ---
 

@@ -172,9 +172,28 @@ The primary objective is to develop a full-featured web application that simplif
 
 ![image](https://github.com/user-attachments/assets/1361518c-be44-4d8c-9c25-0c31018370ac)
 
+![image](https://github.com/user-attachments/assets/1431b524-553b-48f5-8ab2-b4626122b0aa)
 
 ![image](https://github.com/user-attachments/assets/de4ffc52-5dce-4c44-a296-de20658b2e65)
 
-![image](https://github.com/user-attachments/assets/fc6b975e-8fb6-4c6b-bfc5-0aaf10b48e07)
+![image](https://github.com/user-attachments/assets/4080df11-2136-4bf0-8c74-1d86eabdcfd0)
+
 
   ---
+
+- **Challenge Or Difficulties**
+
+- **Collaboration Issues with GitHub**:  
+  Our team encountered problems in connecting and linking our GitHub repositories effectively.
+
+- **Difficulties with Live Share Tools**:  
+  Using tools like Live Share for real-time collaboration proved challenging. Limited familiarity and technical difficulties, such as connection lags, disrupted seamless collaboration during coding sessions.
+
+- **Time Management Constraints**:  
+  Balancing project work with academic and personal responsibilities was a major challenge. Team members had differing schedules, which made it difficult to coordinate meetings and work sessions.
+
+- **Learning Curve for Tools and Frameworks**:  
+  Adopting new tools and frameworks like the MVC architecture required extra effort from the team to understand and implement effectively. This slowed down the initial development phase.
+
+- **Debugging and Testing**:  
+  Debugging errors in the code often led to the discovery of new issues, creating a cycle of fixing and retesting. This process was extremely time-consuming and required significant attention to detail to ensure all functionalities worked as intended.

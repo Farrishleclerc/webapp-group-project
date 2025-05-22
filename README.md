@@ -174,7 +174,7 @@ The primary objective is to develop a full-featured web application that simplif
 
 ![image](https://github.com/user-attachments/assets/3361d00c-98b9-475c-9d37-887dd738a90d)
 
-![image](https://github.com/user-attachments/assets/5c5aec25-53e8-4b29-a37b-7efe7ea631c7)
+![image](https://github.com/user-attachments/assets/f5ad53f2-23a1-411a-afc3-e0ef0c5b0bb5)
 
 ![image](https://github.com/user-attachments/assets/9a618b8a-7785-4627-b8ec-e35bdbd10eba)
 

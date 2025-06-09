@@ -11,7 +11,7 @@
   <nav class="bg-yellow-200 flex justify-between items-center px-8 py-4">
     <div class="flex items-center space-x-2">
       <!-- Logo -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Example.jpg/50px-Example.jpg" alt="Logo" class="w-10 h-10 rounded-full">
+      <img src="resources/css/logo.png">
       <span class="text-xl font-bold">FitPlex</span>
     </div>
     <!-- Navigation Links -->

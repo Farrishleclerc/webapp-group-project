@@ -1,61 +1,209 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏐 FITPLEX -IIUM Sports Facility Booking System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel-based web application that allows iium users to book and manage sports facilities such as football field,futsal,volleyball and badminton courts.Admins can manage facilities, bookings, availability, and monitor usage effectively.
 
-## About Laravel
+## 🚀 GROUP MEMBERS
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- FARRISH AZMI BIN SAIFUL AZMI (2226979)
+- FARIS FAWWAZ BIN SUHEMI (2226623)
+- SYED DANISH AKMAL BIN SYED ZULKHIEREE (2228675)
+- MUHAMMAD HAZIM BIN AZMI (2228065)
+- MUHAMMAD LUQMAN BIN ROSHAN (2225733)
+- AMMAR REDZA BIN MOHD RADZI (2226293)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Introduction
 
-## Learning Laravel
+As sports like futsal,badminton,and volleyball continue to grow in popularity among iium students and staff,there is an increasing demand for streamlined and effective facility management systems. This proposal presents the development of a **FITPLEX*, a web-based platform built with the **Laravel framework**, designed to facilitate the reservation and administration of sports facilities.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The system aims to modernize how users interact with facility booking services, replacing manual and error-prone processes with an efficient, user-friendly digital solution. It allows users to view available facilities, book time slots, manage their reservations, and optionally view their booking history. On the administrative side, it provides tools to manage facilities, monitor bookings, set time slot availability, and track facility usage.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Built using the **Model-View-Controller (MVC)** architecture of Laravel, the system ensures scalability, code reusability, and maintainability. This project focuses on improving operational workflows and delivering a smooth experience for both users and administrators.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+##  Objectives
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+The primary objective is to develop a full-featured web application that simplifies the management and booking of sports facilities. Specific goals include:
 
-### Premium Partners
+1. **Provide a User-Friendly Booking Platform**  
+  Users should be able to register, view available sports facilities, book available time slots, and manage their own reservations with ease.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2. **Utilize Laravel MVC Framework**  
+   Implement the Laravel framework effectively using its routing system, Eloquent models, controllers, views (Blade), and built-in tools like middleware and validation.
 
-## Contributing
+3. **Implement Secure User Authentication and Authorization**  
+   Use Laravel’s built-in authentication to ensure secure access for users and role-based privileges for administrators.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Enable Efficient Facility and Booking Management for Admins**  
+   Allow administrators to manage facilities, set availability, view booking lists, and optionally approve or cancel bookings.
 
-## Code of Conduct
+5. **Provide Optional Reporting and History Tracking**  
+   Include optional features such as booking history for users and facility usage reports for admins.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## Core Features and Functionalities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### User Side
 
-## License
+#### Register/Login
+- **Create**: Allows users (students, staff) to create a new account using their email, matric/staff number, and a secure password.  
+- **Read**: After logging in, users can access their account details, bookings, and available services.  
+- **Update**: Users can update their personal information such as email or password.  
+- **Delete**: Users can request to delete their account (if implemented).
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### View Facilities
+- **Read**: Displays a list of all available sports facilities (e.g., futsal courts, volleyball courts, football field) including descriptions, images, and facility details.
+
+#### Check Availability
+- **Read**: Allows users to check available dates and time slots for each facility before booking. The system checks for conflicts and displays only free slots.
+
+#### Book a Facility
+- **Create**: Enables users to select a facility, date, and time, and submit a booking request. A confirmation is shown after successful submission.  
+- **Read**: Users can view the booking details and status.  
+- **Update**: Users can edit a booking before the session starts (subject to rules).  
+- **Delete**: Users can cancel a booking within the allowed cancellation period.
+
+#### Manage Bookings
+- **Read**: Displays all bookings made by the user with details such as time, date, and status.  
+- **Update**: Users may reschedule or update their booking details.  
+- **Delete**: Users can remove or cancel their bookings when needed.
+
+#### Booking History
+- **Read**: Shows the user’s past bookings, dates, and facility usage records for their reference.
+
+#### Membership & Packages
+- **View Membership Options**
+  - **Read**: Users can view a list of available membership types and packages, including descriptions, benefits, pricing, and validity duration.
+- **Subscribe to Membership / Purchase Package**
+  - **Create**: Allows users to subscribe to a membership plan or purchase a package through the platform, with payment integrated via FPX gateway.
+- **View Membership Status**
+  - **Read**: Displays current membership details such as type, start and end date, benefits, and usage limits (if any).
+- **Cancel Membership**
+  - **Delete**: Users can request to cancel an active membership or package, subject to cancellation terms and conditions.
+
+#### Contact Us
+- **Create**: Users can send inquiries, complaints, or feedback by filling out a contact form that includes their name, matric/staff number, email, subject, and message.  
+- **Read**: Users may view a status update or receive a confirmation email when their inquiry is replied to by the admin.
+
+#### Payment
+
+##### Pay Service Fee
+- **Create**: Allows users to initiate a fixed-amount standalone payment (e.g., RM5.00) using FPX. The system redirects users to the payment gateway (e.g., Billplz or ToyyibPay).  
+- **Read**: After a successful transaction, users can view their payment receipt and confirmation status.  
+- **Update**: Not applicable (optional: allow resend of receipt).  
+- **Delete**: Not applicable (transaction records are permanent).
+
+##### Payment History
+- **Read**: Displays a list of all past payments including service fees and membership/package purchases with payment date, amount, and transaction status.
+
+---
+
+### Admin Side
+
+#### Facility Management
+- **Create**: Admins can add new facilities including name, category, description, and image.  
+- **Read**: Displays a list of all existing facilities.  
+- **Update**: Admins can edit facility details.  
+- **Delete**: Admins can remove facilities that are no longer available.
+
+#### Time Slot Management
+- **Create**: Admins can define time slots available for booking per facility.  
+- **Read**: Shows existing time slots and their statuses.  
+- **Update**: Admins can adjust or reschedule time slots due to maintenance or changes.  
+- **Delete**: Remove outdated or conflicting time slots.
+
+#### Booking Oversight
+- **Create**: Admins can manually add bookings for users if requested.  
+- **Read**: View and filter all booking records.  
+- **Update**: Modify booking details.  
+- **Delete**: Cancel bookings due to unforeseen circumstances.
+
+#### Booking Approval
+- **Read**: View pending booking requests.  
+- **Update**: Approve or reject bookings based on internal policies or availability.
+
+#### Usage Statistics
+- **Create**: Automatically generate reports showing how often each facility is booked, peak usage times, and user activity over time.  
+- **Read**: View graphs, charts, or tables summarizing booking frequency and demand trends.  
+- **Update**: Apply filters (e.g., date range, facility type) to customize the report view.  
+- **Delete**: *(Optional)* Reset or clear previously generated reports.
+
+#### Membership & Packages Management
+- **Create**: Admins can create membership types and packages (e.g., monthly, yearly) with defined benefits and fees.  
+- **Read**: View all active/inactive memberships and purchase records.  
+- **Update**: Modify membership/package pricing, benefits, or duration.  
+- **Delete**: Deactivate outdated packages (existing subscriptions remain valid until expiry).  
+- **Assign Membership**: Admins can manually assign memberships to users (e.g., for internal or promotional purposes).
+
+#### Contact Us
+- **Create**: Admins can reply to user inquiries via email.  
+- **Read**: View all user-submitted inquiries.  
+- **Update**: Revise or resend replies.  
+- **Delete**: Remove resolved or irrelevant inquiries.
+
+#### Service Fee Management
+- **Create**: Define service fee amount (e.g., RM5.00 per booking).  
+- **Read**: View all service fee transactions by date, user, or status.  
+- **Update**: Modify fee amount or toggle fee requirement per service.  
+- **Delete**: Not applicable (transaction data is permanent for auditing).
+
+#### Transaction Logs & Reports
+- **Read**: Generate financial reports by user, facility, or date for tracking service fee collections and audit purposes.
+---
+- **ERD DIAGRAM**
+
+  ![image](https://github.com/user-attachments/assets/6686979b-f266-47cd-9ffd-e266a77011f7)
+
+
+---
+
+- **SEQUENCE DIAGRAM**
+
+![sqd1](https://github.com/user-attachments/assets/e87ff314-1836-4d88-9a1c-c5cd22176c15)
+
+---
+
+- **MOCKUPS**
+
+![image](https://github.com/user-attachments/assets/1361518c-be44-4d8c-9c25-0c31018370ac)
+
+![image](https://github.com/user-attachments/assets/1431b524-553b-48f5-8ab2-b4626122b0aa)
+
+![image](https://github.com/user-attachments/assets/3361d00c-98b9-475c-9d37-887dd738a90d)
+
+![image](https://github.com/user-attachments/assets/8fb27bcd-bb4f-4377-bb9e-a253a76ffa44)
+
+![image](https://github.com/user-attachments/assets/082e1cd6-8cea-4008-b8c8-556c3b65bc57)
+
+
+![image](https://github.com/user-attachments/assets/f5ad53f2-23a1-411a-afc3-e0ef0c5b0bb5)
+
+![image](https://github.com/user-attachments/assets/9a618b8a-7785-4627-b8ec-e35bdbd10eba)
+
+![image](https://github.com/user-attachments/assets/955e8f2c-5556-4112-ba10-615ca87236ab)
+
+
+![image](https://github.com/user-attachments/assets/4080df11-2136-4bf0-8c74-1d86eabdcfd0)
+
+
+  ---
+
+- **Challenge Or Difficulties**
+
+- **Collaboration Issues with GitHub**:  
+  Our team encountered problems in connecting and linking our GitHub repositories effectively.
+
+- **Difficulties with Live Share Tools**:  
+  Using tools like Live Share for real-time collaboration proved challenging. Limited familiarity and technical difficulties, such as connection lags, disrupted seamless collaboration during coding sessions.
+
+- **Time Management Constraints**:  
+  Balancing project work with academic and personal responsibilities was a major challenge. Team members had differing schedules, which made it difficult to coordinate meetings and work sessions.
+
+- **Learning Curve for Tools and Frameworks**:  
+  Adopting new tools and frameworks like the MVC architecture required extra effort from the team to understand and implement effectively. This slowed down the initial development phase.
+
+- **Debugging and Testing**:  
+  Debugging errors in the code often led to the discovery of new issues, creating a cycle of fixing and retesting. This process was extremely time-consuming and required significant attention to detail to ensure all functionalities worked as intended.

@@ -11,7 +11,7 @@
   <nav class="bg-yellow-200 flex justify-between items-center px-8 py-4">
     <div class="flex items-center space-x-2">
       <!-- Logo -->
-      <img src="resources/css/logo.png">
+      <img src="public/assets/img/logo.png">
       <span class="text-xl font-bold">FitPlex</span>
     </div>
     <!-- Navigation Links -->
@@ -19,8 +19,7 @@
       <a href="#" class="hover:underline">Home</a>
       <a href="#" class="hover:underline">Booking</a>
       <a href="{{ route('contact') }}" class="hover:underline">Contact</a>
-      <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
-
+      <button class="bg-white text-black px-4 py-1 rounded-full font-semibold hover:bg-gray-100">Log In</button>
     </div>
   </nav>
 

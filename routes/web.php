@@ -7,7 +7,7 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('mainpage');
 });
 
 // Add login route

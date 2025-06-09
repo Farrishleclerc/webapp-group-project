@@ -9,3 +9,8 @@ Route::get('/contact', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Add login route
+Route::get('/login', function () {
+    return view('login'); // Assuming your login blade is in resources/views/login.blade.php
+})->name('login');

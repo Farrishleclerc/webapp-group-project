@@ -19,7 +19,7 @@
       <a href="#" class="hover:underline">Home</a>
       <a href="#" class="hover:underline">Booking</a>
       <a href="{{ route('contact') }}" class="hover:underline">Contact</a>
-      <button class="bg-white text-black px-4 py-1 rounded-full font-semibold hover:bg-gray-100">Log In</button>
+     <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
     </div>
   </nav>
 

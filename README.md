@@ -207,3 +207,6 @@ The primary objective is to develop a full-featured web application that simplif
 
 - **Debugging and Testing**:  
   Debugging errors in the code often led to the discovery of new issues, creating a cycle of fixing and retesting. This process was extremely time-consuming and required significant attention to detail to ensure all functionalities worked as intended.
+## 📝 License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).

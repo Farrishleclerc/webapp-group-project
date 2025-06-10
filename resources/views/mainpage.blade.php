@@ -10,24 +10,26 @@
   <!-- Navbar -->
   <nav class="bg-yellow-200 flex justify-between items-center px-8 py-4">
     <div class="flex items-center space-x-2">
-      <!-- Logo -->
-      <img src="public/assets/img/logo.png">
-      <span class="text-xl font-bold">FitPlex</span>
+        <!-- Logo -->
+        <img src="/assets/img/logo.png" alt="FitPlex Logo" class="h-10 w-auto">
+        <span class="text-xl font-bold">FitPlex</span>
     </div>
-    <!-- Navigation Links -->
+
+    <!-- Navigation Links - Moved outside the logo div -->
     <div class="flex items-center space-x-6 text-gray-800 font-medium">
       <a href="#" class="hover:underline">Home</a>
       <a href="#" class="hover:underline">Booking</a>
-      <a href="/contact" class="hover:underline">Contact</a>
-
+      <a href="{{ route('contact') }}" class="hover:underline">Contact</a>
      <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
     </div>
-  </nav>
+</nav>
 
   <!-- Hero Section -->
   <div class="max-w-4xl mx-auto px-6 py-12 text-center">
     <h1 class="text-4xl font-extrabold italic mb-6">YOUR SPORT HAVEN !</h1>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/UTC_Interior_Gym_Track.jpg" alt="Indoor Court" class="rounded-3xl mx-auto w-full max-h-[500px] object-cover mb-6">
+    <img src="{{ asset('assets/img/445502507_10232068262519710_7962354722553515553_n-1024x684.jpg') }}"
+         alt="FitPlex main logo"
+         class="rounded-3xl mx-auto w-full max-h-[500px] object-cover mb-6">
     <p class="text-gray-700 text-base max-w-2xl mx-auto mb-6">
       Get ready to elevate your game. FitPlex is your go-to platform for hassle-free sport facility bookings.
       With easy access and efficient management, you can focus on what you love the most: playing your favorite sports.
@@ -35,7 +37,7 @@
     <button class="bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-semibold px-6 py-2 rounded-full shadow-md">
       Get Started
     </button>
-  </div>
+</div>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitPlex - Sign In</title>
+    <title>FitPlex - REGISTER</title>
     <style>
         * {
             margin: 0;
@@ -39,7 +39,7 @@
         }
 
         .login-container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(236, 237, 143, 0.9);
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             padding: 40px;
@@ -130,7 +130,7 @@
             <p class="tagline">"Ready to elevate your game with us"</p>
         </div>
 
-        <h2 class="form-title">SIGN IN</h2>
+        <h2 class="form-title">REGISTER</h2>
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -155,11 +155,11 @@
                 <input type="password" id="password_confirmation" name="password_confirmation" required>
             </div>
 
-            <button type="submit">Sign In</button>
+            <button type="submit">REGISTER</button>
 
-            <div class="register-section">
+           {{--  <div class="register-section">
                 <p>Don't have an account? <a href="{{ route('register') }}" class="register-link">Register here</a></p>
-            </div>
+            </div> --}}
         </form>
     </div>
 </body>

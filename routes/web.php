@@ -14,3 +14,7 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login'); // Assuming your login blade is in resources/views/login.blade.php
 })->name('login');
+
+Route::get('/register', function () {
+    return view('register'); // Assuming your login blade is in resources/views/login.blade.php
+})->name('register');

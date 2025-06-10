@@ -1,22 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookingController;
+
+
 
 Route::get('/', function () {
     return view('mainpage');
-})->name('home');
+});
 
-// Authentication Routes
+// Add login route
 Route::get('/login', function () {
-    return view('login');
+    return view('login'); // Assuming your login blade is in resources/views/login.blade.php
 })->name('login');
 
 Route::get('/register', function () {
-    return view('register');
+    return view('register'); // Assuming your login blade is in resources/views/login.blade.php
 })->name('register');
 
-// Contact Route
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');

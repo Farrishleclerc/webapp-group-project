@@ -18,11 +18,9 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-<<<<<<< HEAD
 Route::get('/booking', function () {
     return view('booking');
 })->name('booking');
-=======
 // Admin auth
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
@@ -44,4 +42,3 @@ Route::prefix('admin')->name('admin.')->group(function () {
         });
     });
 });
->>>>>>> b9f0c81 (admin dashboard)

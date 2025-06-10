@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController; // Added
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\AdminCrudController;
 
@@ -14,13 +15,16 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
 
+// Contact routes
+Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+// Booking route
 Route::get('/booking', function () {
     return view('booking');
 })->name('booking');
+
 // Admin auth
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
@@ -39,6 +43,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/{user}/edit', [AdminCrudController::class, 'edit'])->name('edit');
             Route::put('/{user}', [AdminCrudController::class, 'update'])->name('update');
             Route::delete('/{user}', [AdminCrudController::class, 'destroy'])->name('destroy');
+        });
+
+        // Admin contact messages management (optional)
+        Route::prefix('contacts')->name('contacts.')->group(function () {
+            Route::get('/', [AdminCrudController::class, 'contactMessages'])->name('index');
+            Route::delete('/{contact}', [AdminCrudController::class, 'destroyContact'])->name('destroy');
         });
     });
 });

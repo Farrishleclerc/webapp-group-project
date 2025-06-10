@@ -23,7 +23,16 @@
       <a href="#" class="hover:underline">Home</a>
       <a href="{{ route('booking') }}">Booking</a>
       <a href="{{ route('contact') }}">Contact</a>
-      <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
+
+      <!-- User Login Button -->
+      <a href="{{ route('login') }}" class="bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-semibold px-4 py-2 rounded shadow">
+        Login
+      </a>
+
+      <!-- Admin Login Button -->
+      <a href="{{ route('admin.login') }}" class="bg-red-400 hover:bg-red-500 text-white font-semibold px-4 py-2 rounded shadow">
+        Admin Login
+      </a>
     </div>
   </nav>
 

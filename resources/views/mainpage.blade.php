@@ -20,31 +20,10 @@
 
     <!-- Navigation Links -->
     <div class="flex items-center space-x-6 text-gray-800 font-medium">
-      <a href="{{ url('/') }}" class="hover:underline">Home</a>
-
-      <!-- Booking Dropdown -->
-      <div class="relative" x-data="{ open: false }">
-        <button
-            @click="open = !open"
-            class="hover:underline focus:outline-none flex items-center"
-        >
-            Booking
-            <svg class="w-4 h-4 ml-1 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-        </button>
-        <div
-            x-show="open"
-            @click.outside="open = false"
-            class="absolute bg-white shadow-lg rounded-md mt-2 py-1 w-48 z-50"
-        >
-            <a href="{{ route('booking.single') }}" class="block px-4 py-2 hover:bg-gray-100">Single Booking</a>
-            <a href="{{ route('booking.package') }}" class="block px-4 py-2 hover:bg-gray-100">Package Booking</a>
-        </div>
-    </div>
-
-      <a href="{{ route('contact') }}" class="hover:underline">Contact</a>
-      <a href="{{ route('login') }}" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors">Login</a>
+      <a href="#" class="hover:underline">Home</a>
+      <a href="#" class="hover:underline">Booking</a>
+      <a href="{{ route('contact') }}">Contact</a>
+      <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
     </div>
   </nav>
 

@@ -1,22 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('mainpage');
-})->name('home');
+});
 
-// Add login route
-Route::get('/login', function () {
-    return view('login'); // Assuming your login blade is in resources/views/login.blade.php
-})->name('login');
+// Login routes
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
-Route::get('/register', function () {
-    return view('register'); // Assuming your login blade is in resources/views/login.blade.php
-})->name('register');
+// Registration routes
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
 
+// Contact route
 Route::get('/contact', function () {
-    return view('contact'); // Assuming you have a contact.blade.php
+    return view('contact');
 })->name('contact');

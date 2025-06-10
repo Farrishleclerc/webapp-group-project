@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>@yield('title', 'FitPlex')</title>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .package-card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .package-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+      z-index: 0;
+    }
+    .package-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .package-content {
+      position: relative;
+      z-index: 1;
+    }
+    .package-a::before {
+      background-image: url('/assets/img/salahuddin-court.png');
+    }
+    .package-b::before {
+      background-image: url('/assets/img/zubair-court.jpg');
+    }
+  </style>
+</head>
+<body class="bg-yellow-50 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-yellow-200 flex justify-between items-center px-8 py-4">
+    <div class="flex items-center space-x-2">
+      <!-- Logo -->
+      <img src="{{ asset('assets/img/logo.png') }}" alt="FitPlex Logo" class="h-10 w-auto">
+      <span class="text-xl font-bold">FitPlex</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="flex items-center space-x-6 text-gray-800 font-medium">
+      <a href="{{ route('home') }}">Home</a>
+      <a href="{{ route('booking') }}">Booking</a>
+      <a href="{{ route('contact') }}">Contact</a>
+
+      <!-- User Login Button -->
+      <a href="{{ route('login') }}" class="bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-semibold px-4 py-2 rounded shadow">
+        Login
+      </a>
+
+      <!-- Admin Login Button -->
+      <a href="{{ route('admin.login') }}" class="bg-red-400 hover:bg-red-500 text-white font-semibold px-4 py-2 rounded shadow">
+        Admin Login
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main>
+    @yield('content')
+  </main>
+
+</body>
+</html>

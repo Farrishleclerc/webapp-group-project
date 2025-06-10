@@ -132,17 +132,33 @@
 
         <h2 class="form-title">REGISTER</h2>
 
-        <form method="POST" action="{{ route('login') }}">
+        @if(session('success'))
+            <div style="color: green; margin-bottom: 15px;">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if($errors->any())
+            <div style="color: red; margin-bottom: 15px;">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form method="POST" action="{{ route('register.submit') }}">
             @csrf
 
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required autofocus>
+                <input type="text" id="name" name="name" value="{{ old('name') }}" required autofocus>
             </div>
 
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="{{ old('email') }}" required>
             </div>
 
             <div class="form-group">
@@ -156,10 +172,6 @@
             </div>
 
             <button type="submit">REGISTER</button>
-
-           {{--  <div class="register-section">
-                <p>Don't have an account? <a href="{{ route('register') }}" class="register-link">Register here</a></p>
-            </div> --}}
         </form>
     </div>
 </body>

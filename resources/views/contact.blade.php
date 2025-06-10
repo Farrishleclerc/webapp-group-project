@@ -28,7 +28,7 @@
     <div class="relative bg-cover bg-center min-h-[80vh]" style="background-image: url('{{ asset('assets/img/445502507_10232068262519710_7962354722553515553_n-1024x684.jpg') }}');">
     <div class="absolute inset-0 bg-yellow-100/80 flex flex-col items-center justify-center text-center px-4">
 
-      <h1 class="text-4xl font-extrabold italic mb-2">Contact Us !</h1>
+      <h1 class="text-4xl font-extrabold italic mb-2">Contact Us!</h1>
       <p class="mb-6 text-gray-700">Follow us for more updates !</p>
 
       <!-- Form -->

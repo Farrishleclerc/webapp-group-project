@@ -2,19 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/contact', function () {
-    return view('contact');
-});
-
 Route::get('/', function () {
     return view('mainpage');
 });
 
-// Add login route
+// ✅ Named contact route to fix the error
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+// Named login route
 Route::get('/login', function () {
-    return view('login'); // Assuming your login blade is in resources/views/login.blade.php
+    return view('login'); // resources/views/login.blade.php
 })->name('login');
 
+// Named register route
 Route::get('/register', function () {
-    return view('register'); // Assuming your login blade is in resources/views/login.blade.php
+    return view('register'); // resources/views/register.blade.php
 })->name('register');

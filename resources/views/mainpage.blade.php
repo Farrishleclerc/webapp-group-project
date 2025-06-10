@@ -21,7 +21,7 @@
     <!-- Navigation Links -->
     <div class="flex items-center space-x-6 text-gray-800 font-medium">
       <a href="#" class="hover:underline">Home</a>
-      <a href="#" class="hover:underline">Booking</a>
+      <a href="{{ route('booking') }}">Booking</a>
       <a href="{{ route('contact') }}">Contact</a>
       <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
     </div>

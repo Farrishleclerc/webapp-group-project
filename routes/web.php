@@ -20,3 +20,7 @@ Route::get('/register', function () {
 Route::get('/contact', function () {
     return view('contact'); // Assuming you have a contact.blade.php
 })->name('contact');
+
+Route::get('/booking', function () {
+    return view('booking');
+})->name('booking');

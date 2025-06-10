@@ -2,21 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Home Page
 Route::get('/', function () {
     return view('mainpage');
-});
+})->name('home');
 
-// ✅ Named contact route to fix the error
+// Contact Page (named route)
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-// Named login route
+// Login Page (named route)
 Route::get('/login', function () {
-    return view('login'); // resources/views/login.blade.php
+    return view('login');
 })->name('login');
 
-// Named register route
+// Register Page (named route)
 Route::get('/register', function () {
-    return view('register'); // resources/views/register.blade.php
+    return view('register');
 })->name('register');

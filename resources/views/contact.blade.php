@@ -8,20 +8,21 @@
 <body class="bg-yellow-100 font-sans">
 
   <!-- Navbar -->
-  <nav class="bg-yellow-300 flex justify-between items-center px-8 py-4 shadow-md">
+  <nav class="bg-yellow-200 flex justify-between items-center px-8 py-4">
     <div class="flex items-center space-x-2">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Example.jpg/50px-Example.jpg" alt="Logo" class="w-10 h-10 rounded-full">
-      <span class="text-xl font-bold">FitPlex</span>
+        <!-- Logo -->
+        <img src="/assets/img/logo.png" alt="FitPlex Logo" class="h-10 w-auto">
+        <span class="text-xl font-bold">FitPlex</span>
     </div>
-    <div class="flex items-center space-x-6 text-gray-900 font-medium">
-      <a href="/" class="hover:underline">Home</a>
-      <a href="/booking" class="hover:underline">Booking</a>
-      <a href="/contact" class="underline font-bold">Contact</a>
-      <a href="/login">
-        <button class="bg-white text-black px-4 py-1 rounded-full font-semibold hover:bg-gray-100">Log In</button>
-      </a>
+
+    <!-- Navigation Links - Moved outside the logo div -->
+    <div class="flex items-center space-x-6 text-gray-800 font-medium">
+      <a href="#" class="hover:underline">Home</a>
+      <a href="#" class="hover:underline">Booking</a>
+      <a href="{{ route('contact') }}" class="hover:underline">Contact</a>
+     <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
     </div>
-  </nav>
+</nav>
 
   <!-- Hero Background -->
   <div class="relative bg-cover bg-center min-h-[80vh]" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/28/UTC_Interior_Gym_Track.jpg');">

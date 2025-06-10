@@ -2,22 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Home Page
+
+
 Route::get('/', function () {
     return view('mainpage');
 })->name('home');
 
-// Contact Page (named route)
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
-
-// Login Page (named route)
+// Add login route
 Route::get('/login', function () {
-    return view('login');
+    return view('login'); // Assuming your login blade is in resources/views/login.blade.php
 })->name('login');
 
-// Register Page (named route)
 Route::get('/register', function () {
-    return view('register');
+    return view('register'); // Assuming your login blade is in resources/views/login.blade.php
 })->name('register');
+
+Route::get('/contact', function () {
+    return view('contact'); // Assuming you have a contact.blade.php
+})->name('contact');

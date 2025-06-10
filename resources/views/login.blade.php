@@ -132,35 +132,27 @@
 
         <h2 class="form-title">SIGN IN</h2>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+        <form method="POST" action="{{ route('login.submit') }}">
+    @csrf
 
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required autofocus>
-            </div>
+    <!-- Remove the name field (not typically used for login) -->
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required autofocus>
+    </div>
 
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
 
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
+    <!-- Remove the password confirmation field (not needed for login) -->
+    <button type="submit">Sign In</button>
 
-            <div class="form-group">
-                <label for="password_confirmation">Confirm Password:</label>
-                <input type="password" id="password_confirmation" name="password_confirmation" required>
-            </div>
-
-            <button type="submit">Sign In</button>
-
-            <div class="register-section">
-                <p>Don't have an account? <a href="{{ route('register') }}" class="register-link">Register here</a></p>
-            </div>
-        </form>
+    <div class="register-section">
+        <p>Don't have an account? <a href="{{ route('register') }}" class="register-link">Register here</a></p>
+    </div>
+</form>
     </div>
 </body>
 </html>

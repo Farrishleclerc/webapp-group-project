@@ -3,64 +3,48 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User; // Example model
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Contact;
 
 class AdminCrudController extends Controller
 {
-    // Display all users
+    // Users
     public function index()
     {
-        $users = User::latest()->paginate(10);
+        $users = User::all();
         return view('admin.users.index', compact('users'));
     }
 
-    // Show create form
-    public function create()
+    public function edit($id)
     {
-        return view('admin.users.create');
-    }
-
-    // Store new user
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
-        ]);
-
-        User::create($validated);
-
-        return redirect()->route('admin.users.index')
-            ->with('success', 'User created successfully');
-    }
-
-    // Show edit form
-    public function edit(User $user)
-    {
+        $user = User::findOrFail($id);
         return view('admin.users.edit', compact('user'));
     }
 
-    // Update user
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,'.$user->id,
-        ]);
-
-        $user->update($validated);
-
-        return redirect()->route('admin.users.index')
-            ->with('success', 'User updated successfully');
+        $user = User::findOrFail($id);
+        $user->update($request->only(['name', 'email', 'password']));
+        return redirect()->route('admin.users.index')->with('success', 'User updated.');
     }
 
-    // Delete user
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->delete();
-        return redirect()->route('admin.users.index')
-            ->with('success', 'User deleted successfully');
+        User::destroy($id);
+        return back()->with('success', 'User deleted.');
+    }
+
+    // Contacts
+    public function contactMessages()
+    {
+        $contacts = Contact::all();
+        return view('admin.contacts.index', compact('contacts'));
+    }
+
+    public function destroyContact($id)
+    {
+        Contact::destroy($id);
+        return back()->with('success', 'Message deleted.');
     }
 }

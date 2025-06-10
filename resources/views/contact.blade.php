@@ -25,11 +25,11 @@
 </nav>
 
   <!-- Hero Background -->
-  <div class="relative bg-cover bg-center min-h-[80vh]" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/28/UTC_Interior_Gym_Track.jpg');">
+    <div class="relative bg-cover bg-center min-h-[80vh]" style="background-image: url('{{ asset('assets/img/445502507_10232068262519710_7962354722553515553_n-1024x684.jpg') }}');">
     <div class="absolute inset-0 bg-yellow-100/80 flex flex-col items-center justify-center text-center px-4">
 
       <h1 class="text-4xl font-extrabold italic mb-2">Contact Us!</h1>
-      <p class="mb-6 text-gray-700">Follow us for more updates!</p>
+      <p class="mb-6 text-gray-700">Follow us for more updates !</p>
 
       <!-- Form -->
       <form action="#" method="POST" class="w-full max-w-xl space-y-4">
@@ -52,7 +52,7 @@
 
   <!-- Footer / Contact Icons -->
   <div class="bg-yellow-300 py-8 text-center">
-    <h2 class="text-2xl font-semibold mb-4">How to find us?</h2>
+    <h2 class="text-2xl font-semibold mb-4">How to find us ?</h2>
     <div class="flex justify-center gap-6 flex-wrap">
       <a href="mailto:fitplex@gmail.com" class="flex flex-col items-center">
         <img src="https://img.icons8.com/ios-glyphs/48/000000/gmail.png" class="w-10 h-10">

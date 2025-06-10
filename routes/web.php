@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+
 
 Route::get('/', function () {
     return view('mainpage');
@@ -18,3 +16,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register'); // Assuming your login blade is in resources/views/login.blade.php
 })->name('register');
+
+Route::get('/contact', function () {
+    return view('contact'); // Assuming you have a contact.blade.php
+})->name('contact');

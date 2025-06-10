@@ -27,7 +27,7 @@
 <body class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-indigo-700 mb-2">Fi+Plex</h1>
+            <h1 class="text-4xl font-bold text-indigo-700 mb-2">FitPlex</h1>
             <h2 class="text-2xl text-gray-600">Log in and grab our package!</h2>
         </div>
 

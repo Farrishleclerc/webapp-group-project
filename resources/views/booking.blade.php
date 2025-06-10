@@ -22,9 +22,11 @@
         </div>
         <div class="mt-6">
           <p class="text-2xl font-bold text-indigo-600 mb-4">3 Days for RM30</p>
-          <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-300">
-            Proceed
-          </button>
+<form method="GET" action="{{ route('package.booking', ['package' => 'A']) }}">
+    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+        Proceed
+    </button>
+</form>
         </div>
       </div>
     </div>
@@ -41,9 +43,11 @@
         </div>
         <div class="mt-6">
           <p class="text-2xl font-bold text-indigo-600 mb-4">3 Days for RM25</p>
-          <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-300">
-            Proceed
-          </button>
+<form method="GET" action="{{ route('package.booking', ['package' => 'B']) }}">
+    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+        Proceed
+    </button>
+</form>
         </div>
       </div>
     </div>

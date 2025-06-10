@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController; // Added
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\AdminCrudController;
+use App\Http\Controllers\BookingController;
 
 Route::get('/', function () {
     return view('mainpage');
@@ -24,6 +25,9 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/booking', function () {
     return view('booking');
 })->name('booking');
+
+Route::get('/packagebooking/{package}', [BookingController::class, 'showBooking'])->name('package.booking');
+Route::post('/submit-booking', [BookingController::class, 'submitBooking'])->name('booking.submit');
 
 // Admin auth
 Route::prefix('admin')->name('admin.')->group(function () {

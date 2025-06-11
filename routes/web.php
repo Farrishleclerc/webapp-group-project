@@ -55,16 +55,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/singlebooking', [BookingController::class, 'showSingleBooking'])->name('single.booking');
     Route::post('/singlebooking/submit', [BookingController::class, 'submitSingleBooking'])->name('booking.single.submit');
 
-    // ✅ Payment Routes
-    Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
-    Route::post('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
+    Route::middleware('auth')->group(function () {
+        // ... your other routes ...
+
+        Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
+        Route::post('/payment', [PaymentController::class, 'process'])->name('payment.process'); // ✅ Add this
+    });
+
 });
-
-// payment
-// web.php
-Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.form');
-Route::post('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
-
 
 
 

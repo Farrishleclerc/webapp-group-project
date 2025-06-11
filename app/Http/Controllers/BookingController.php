@@ -56,7 +56,7 @@ public function submitBooking(Request $request)
 
     return redirect()->route('payment.show');
 }
-    public function submitSingleBooking(Request $request)
+public function submitSingleBooking(Request $request)
 {
     $validated = $request->validate([
         'sport' => 'required|string',

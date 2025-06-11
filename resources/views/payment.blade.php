@@ -1,95 +1,42 @@
-<!-- resources/views/make_payment.blade.php -->
-
 @extends('master.layout')
 
+
 @section('content')
-<style>
-    .payment-container {
-        max-width: 900px;
-        margin: auto;
-        background: #fffbe6;
-        padding: 2rem;
-        border-radius: 10px;
-        font-family: Arial, sans-serif;
-    }
-    .section {
-        margin-bottom: 1.5rem;
-    }
-    .summary-box, .billing-box, .method-box {
-        background: #ffffff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1rem;
-    }
-    .summary-header {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-    }
-    .highlight {
-        color: red;
-        font-weight: bold;
-    }
-    .proceed-btn {
-        background-color: #32CD32;
-        color: white;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 6px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    .proceed-btn:hover {
-        background-color: #28a428;
-    }
-    .back-btn {
-        background-color: #ccc;
-        padding: 0.75rem 1.5rem;
-        border-radius: 6px;
-        text-decoration: none;
-        margin-right: 1rem;
-    }
-</style>
+<div class="max-w-xl mx-auto mt-10">
+    <h2 class="text-2xl font-bold mb-4">Payment</h2>
 
-<div class="payment-container">
-    <div class="section">
-        <h3>Booking Details → <strong>Payment</strong> → Done</h3>
-        <div style="background: #fff2cc; padding: 10px; border-radius: 5px;">
-            Your booking will expire in <span class="highlight">7:08</span>
-        </div>
+    @php
+    $booking = session('bookingData');
+@endphp
+
+@if($booking)
+    <div class="p-4 bg-white shadow rounded">
+        <h2 class="text-xl font-semibold mb-2">Booking Summary</h2>
+
+        {{-- Common field --}}
+        <p><strong>Court:</strong> {{ $booking['court'] ?? 'N/A' }}</p>
+
+        {{-- Package Booking --}}
+        @if(isset($booking['package']))
+            <p><strong>Package:</strong> {{ $booking['package'] }}</p>
+            <p><strong>Start Date:</strong> {{ $booking['start_date'] }}</p>
+            <p><strong>End Date:</strong> {{ $booking['end_date'] }}</p>
+        @endif
+
+        {{-- Single Booking --}}
+        @if(isset($booking['sport']))
+            <p><strong>Sport:</strong> {{ $booking['sport'] }}</p>
+            <p><strong>Date:</strong> {{ $booking['start_date'] }}</p>
+            <p><strong>Start Time:</strong> {{ $booking['start_time'] }}</p>
+            <p><strong>Duration:</strong> {{ $booking['duration'] }}</p>
+        @endif
     </div>
 
-    <div class="section billing-box">
-        <div class="summary-header">Enter billing details</div>
-        <p>These details will reflect on the invoice and no changes are allowed once payment is made.<br>
-        Special characters (e.g. !#*) will be removed automatically.</p>
-        <input type="text" name="billing_to" class="form-control" placeholder="Billing to">
-    </div>
-
-    <div class="section" style="display: flex; gap: 1rem;">
-        <div class="method-box" style="flex: 1;">
-            <div class="summary-header">Payment method</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/FPX_Logo.png" alt="FPX" style="height: 40px;">
-            <p>Online Banking</p>
-        </div>
-
-        <div class="summary-box" style="flex: 1;">
-            <div class="summary-header">Booking Summary</div>
-            <div><strong>FUTSAL</strong></div>
-            <div>Mahallah Salahuddin Al-Ayyubi<br>IIUM Gombak, KL</div>
-            <div>22/05/2025 – Saturday</div>
-            <div>5:00 pm - 7:00 pm</div>
-            <div>RM 5.00</div>
-        </div>
-
-        <div class="summary-box" style="flex: 1;">
-            <div class="summary-header">Price Summary</div>
-            <div>TOTAL: <strong>RM 5.00</strong></div>
-        </div>
-    </div>
-
-    <div class="section" style="text-align: right;">
-        <a href="{{ route('booking') }}" class="back-btn">Back</a>
-        <button type="submit" class="proceed-btn">Proceed to Payment</button>
-    </div>
-</div>
+    <form method="POST" action="{{ route('payment.process') }}">
+        @csrf
+        <button type="submit" class="bg-green-600 text-white font-bold py-2 px-4 rounded hover:bg-green-700 transition">
+            Confirm & Pay
+        </button>
+    </form>
+@endif
 @endsection

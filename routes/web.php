@@ -43,17 +43,21 @@ Route::middleware('auth')->post('/logout', [AuthController::class, 'logout'])->n
 
 /*
 |--------------------------------------------------------------------------
-| Authenticated User Routes (Booking-related)
+| Authenticated User Routes (Booking-related + Payment)
 |--------------------------------------------------------------------------
 */
 Route::middleware('auth')->group(function () {
     // Package Booking
     Route::get('/packagebooking/{package}', [BookingController::class, 'showBooking'])->name('package.booking');
-    Route::post('/submit-booking', [BookingController::class, 'submitBooking'])->name('booking.submit'); // ✅ FIXED
+    Route::post('/submit-booking', [BookingController::class, 'submitBooking'])->name('booking.submit');
 
     // Single Booking
     Route::get('/singlebooking', [BookingController::class, 'showSingleBooking'])->name('single.booking');
     Route::post('/singlebooking/submit', [BookingController::class, 'submitSingleBooking'])->name('booking.single.submit');
+
+    // ✅ Payment Routes
+    Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
+    Route::post('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
 });
 
 // payment

@@ -6,16 +6,16 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    // Add this method
-    public function showPaymentForm()
+    public function show()
     {
-        return view('payment'); // Use the correct Blade file name here
+        $booking = session('bookingData');
+        return view('.payment', compact('booking')); // 👈 updated path
     }
 
-    public function process(Request $request)
-    {
-        // Example logic for payment
-        // You can add validation, store info, etc.
-        return redirect()->route('payment.success'); // or any success page
-    }
+public function process(Request $request)
+{
+    // Handle actual payment logic here (e.g., Stripe, mock payment)
+    session()->forget('bookingData');
+    return redirect()->route('home')->with('success', 'Payment successful!');
+}
 }

@@ -143,6 +143,9 @@
             </div>
             <button type="submit">Login</button>
         </form>
+        <div class="register-section">
+            <p>Want to go back?</p>
+            <a href="{{ route('home') }}" class="register-link">Back to Main Page</a>
     </div>
 </body>
 </html>

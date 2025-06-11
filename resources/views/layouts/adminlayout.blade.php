@@ -18,6 +18,7 @@
     <div class="flex items-center space-x-6 text-white font-medium">
         <a href="{{ route('admin.dashboard') }}" class="hover:text-yellow-300">Dashboard</a>
         <a href="{{ route('admin.users.indexadmin') }}" class="hover:text-yellow-300">Users</a>
+        <a href="{{ route('admin.bookings.index') }}" class="hover:text-yellow-300">Bookings</a>
         <a href="{{ route('admin.contacts.index') }}" class="hover:text-yellow-300">Messages</a>
 
         <!-- Logout -->

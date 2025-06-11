@@ -66,25 +66,17 @@ public function submitSingleBooking(Request $request)
         'court' => 'required|string',
     ]);
 
-    Booking::create([
+    $booking = Booking::create([
         'user_id' => Auth::id(),
         'sport' => $validated['sport'],
-        'start_date' => $validated['date'],
+        'start_date' => $validated['date'], // still store in DB as start_date
         'start_time' => $validated['start_time'],
         'duration' => $validated['duration'],
         'court' => $validated['court'],
     ]);
 
-    // Fix: Use correct key names expected in the payment view
-    session([
-        'bookingData' => [
-            'sport' => $validated['sport'],
-            'date' => $validated['date'], // <- make sure this is the key you use in the view
-            'start_time' => $validated['start_time'],
-            'duration' => $validated['duration'],
-            'court' => $validated['court'],
-        ]
-    ]);
+    $bookingArray = $booking->toArray();
+    Session::put('bookingData', $bookingArray); // now contains 'start_date'
 
     return redirect()->route('payment.show');
 }

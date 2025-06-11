@@ -24,12 +24,12 @@
         @endif
 
         {{-- Single Booking --}}
-        @if(isset($booking['sport']))
-            <p><strong>Sport:</strong> {{ $booking['sport'] }}</p>
-            <p><strong>Date:</strong> {{ $booking['start_date'] }}</p>
-            <p><strong>Start Time:</strong> {{ $booking['start_time'] }}</p>
-            <p><strong>Duration:</strong> {{ $booking['duration'] }}</p>
-        @endif
+@if(isset($booking['sport']))
+<p><strong>Sport:</strong> {{ $booking['sport'] }}</p>
+<p><strong>Date:</strong> {{ $booking['start_date'] ?? $booking['date'] ?? 'N/A' }}</p>
+<p><strong>Start Time:</strong> {{ $booking['start_time'] ?? 'N/A' }}</p>
+<p><strong>Duration:</strong> {{ $booking['duration'] ?? 'N/A' }}</p>
+@endif
     </div>
 
     <form method="POST" action="{{ route('payment.process') }}">

@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\AdminCrudController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use App\Http\Controllers\BookingController;
 Route::get('/', function () {
     return view('mainpage');
 })->name('home');
+
+
 
 // User Auth Routes (for guests only)
 Route::middleware('guest')->group(function () {
@@ -52,6 +55,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/singlebooking', [BookingController::class, 'showSingleBooking'])->name('single.booking');
     Route::post('/singlebooking/submit', [BookingController::class, 'submitSingleBooking'])->name('booking.single.submit');
 });
+
+// payment
+// web.php
+Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.form');
+Route::post('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
+
+
+
 
 /*
 |--------------------------------------------------------------------------

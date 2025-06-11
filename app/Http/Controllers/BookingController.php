@@ -48,8 +48,7 @@ class BookingController extends Controller
             'court' => $validated['court'],
         ]);
 
-        return redirect()->route('package.booking', ['package' => $request->package])
-            ->with('success', 'Booking submitted! Proceed to payment.');
+       return redirect()->route('payment.form');
     }
 
     public function showSingleBooking()

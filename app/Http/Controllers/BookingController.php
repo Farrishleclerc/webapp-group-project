@@ -35,5 +35,25 @@ class BookingController extends Controller
         ->with('success', 'Booking submitted! Proceed to payment.');
 }
 
+public function showSingleBooking()
+{
+    $sports = ['Futsal', 'Badminton', 'Basketball', 'Volleyball'];
+    return view('booking.singlebooking', compact('sports'));
+}
+
+public function submitSingleBooking(Request $request)
+{
+    $validated = $request->validate([
+        'sport' => 'required|string',
+        'date' => 'required|date',
+        'start_time' => 'required',
+        'duration' => 'required|string',
+        'court' => 'required|string',
+    ]);
+
+    // Optionally save booking to DB here...
+
+    return redirect()->route('single.booking')->with('success', 'Booking submitted successfully!');
+}
 }
 

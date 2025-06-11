@@ -21,13 +21,19 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.su
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-// Booking route
+// Booking homepage (choose type)
 Route::get('/booking', function () {
-    return view('booking');
+    return view('booking.booking'); // this points to: resources/views/booking/booking.blade.php
 })->name('booking');
 
+// Package Booking
 Route::get('/packagebooking/{package}', [BookingController::class, 'showBooking'])->name('package.booking');
 Route::post('/submit-booking', [BookingController::class, 'submitBooking'])->name('booking.submit');
+
+// Single Booking
+Route::get('/singlebooking', [BookingController::class, 'showSingleBooking'])->name('single.booking');
+Route::post('/singlebooking/submit', [BookingController::class, 'submitSingleBooking'])->name('booking.single.submit');
+
 
 // Admin auth
 Route::prefix('admin')->name('admin.')->group(function () {

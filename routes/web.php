@@ -61,6 +61,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
         Route::post('/payment', [PaymentController::class, 'process'])->name('payment.process'); // ✅ Add this
     });
+    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
 
 });
 

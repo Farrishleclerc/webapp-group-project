@@ -188,6 +188,41 @@ The primary objective is to develop a full-featured web application that simplif
 
 ![image](https://github.com/user-attachments/assets/4080df11-2136-4bf0-8c74-1d86eabdcfd0)
 
+---
+
+## Actual Website
+
+- **USER**
+
+<img width="1470" alt="Screenshot 2025-06-12 at 5 01 18 AM" src="https://github.com/user-attachments/assets/712ffcd3-5f88-4a1b-99b1-8f9c3f23767e" />
+
+<img width="1470" alt="Screenshot 2025-06-12 at 5 03 39 AM" src="https://github.com/user-attachments/assets/80a81f30-8a83-48bb-a069-c9861fd634c4" />
+
+<img width="1470" alt="Screenshot 2025-06-12 at 5 03 14 AM" src="https://github.com/user-attachments/assets/3d933e23-b1cb-496f-9a12-f00b87f10b61" />
+
+<img width="1460" alt="Screenshot 2025-06-12 at 5 01 59 AM" src="https://github.com/user-attachments/assets/4f798fba-6118-4faf-b8f0-d1bf2b1cc77f" />
+
+<img width="1470" alt="Screenshot 2025-06-12 at 5 02 14 AM" src="https://github.com/user-attachments/assets/c34850ff-951c-4509-85c8-c6936641dcbc" />
+
+<img width="1470" alt="Screenshot 2025-06-12 at 5 02 42 AM" src="https://github.com/user-attachments/assets/289bedf8-c28c-44e3-b3df-82da03da4e94" />
+
+<img width="1470" alt="Screenshot 2025-06-12 at 5 02 53 AM" src="https://github.com/user-attachments/assets/464e4d47-ea0a-494b-a019-66c1493acfaf" />
+
+<img width="1470" alt="Screenshot 2025-06-12 at 5 01 31 AM" src="https://github.com/user-attachments/assets/7062e1c2-ad80-4b2a-a26f-b3d5207f259f" />
+
+---
+- **ADMIN**
+
+![Screenshot 2025-06-12 at 5 03 07 AM](https://github.com/user-attachments/assets/eb78eb39-63a1-4e51-a104-18df1435336a)
+
+<img width="1470" alt="Screenshot 2025-06-12 at 5 04 12 AM" src="https://github.com/user-attachments/assets/ada3ae52-9f34-45aa-8d9e-813d0c9661fb" />
+
+![Screenshot 2025-06-12 at 5 04 21 AM](https://github.com/user-attachments/assets/3b4d64a1-8dbf-42a9-be31-19a194cb2d8c)
+
+<img width="1470" alt="Screenshot 2025-06-12 at 5 04 29 AM" src="https://github.com/user-attachments/assets/3b71302f-047e-4e4b-80c3-a689db67f545" />
+
+<img width="1470" alt="Screenshot 2025-06-12 at 5 04 38 AM" src="https://github.com/user-attachments/assets/71d69975-cfc1-4f3e-a0f7-b124e19171d3" />
+
 
   ---
 

@@ -88,5 +88,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/', [AdminCrudController::class, 'contactMessages'])->name('index');
             Route::delete('/{contact}', [AdminCrudController::class, 'destroyContact'])->name('destroy');
         });
+
+        Route::prefix('bookings')->name('bookings.')->group(function () {
+            Route::get('/', [AdminCrudController::class, 'bookingIndex'])->name('index');
+            Route::get('/{booking}/edit', [AdminCrudController::class, 'editBooking'])->name('edit');
+            Route::put('/{booking}', [AdminCrudController::class, 'updateBooking'])->name('update');
+            Route::delete('/{booking}', [AdminCrudController::class, 'destroyBooking'])->name('destroy');
+        });
     });
 });

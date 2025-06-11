@@ -28,9 +28,15 @@
                class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
                 Manage Users
             </a>
+
             <a href="{{ route('admin.contacts.index') }}"
                class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
                 Manage Contact Messages
+            </a>
+
+            <a href="{{ route('admin.bookings.index') }}"
+               class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+                Manage Bookings
             </a>
         </div>
     </div>

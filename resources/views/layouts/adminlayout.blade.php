@@ -1,46 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Admin Panel</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        nav {
-            background-color: #333;
-            padding: 10px;
-            color: #fff;
-        }
-        nav a {
-            color: #fff;
-            margin-right: 15px;
-            text-decoration: none;
-        }
-        .container {
-            margin-top: 20px;
-        }
-        .logout {
-            float: right;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>@yield('title', 'FitPlex Admin Panel')</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 font-sans">
 
-<nav>
-    <span>Admin Dashboard</span>
-    <a href="{{ route('admin.dashboard') }}">Home</a>
-    <a href="{{ route('admin.users.indexadmin') }}">Users</a>
-    <a href="{{ route('admin.contacts.index') }}">Messages</a>
-    <form class="logout" action="{{ route('admin.logout') }}" method="POST" style="display:inline;">
-        @csrf
-        <button type="submit" style="background:none;border:none;color:white;cursor:pointer;">Logout</button>
-    </form>
+<!-- Admin Navbar -->
+<nav class="bg-gray-800 text-white px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+        <img src="{{ asset('assets/img/logo.png') }}" alt="FitPlex Logo" class="h-8 w-auto">
+        <span class="text-xl font-semibold">FitPlex Admin</span>
+    </div>
+
+    <div class="flex items-center space-x-6 text-white font-medium">
+        <a href="{{ route('admin.dashboard') }}" class="hover:text-yellow-300">Dashboard</a>
+        <a href="{{ route('admin.users.indexadmin') }}" class="hover:text-yellow-300">Users</a>
+        <a href="{{ route('admin.contacts.index') }}" class="hover:text-yellow-300">Messages</a>
+
+        <!-- Logout -->
+        <form action="{{ route('admin.logout') }}" method="POST" class="inline">
+            @csrf
+            <button type="submit" class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded text-sm font-semibold">Logout</button>
+        </form>
+    </div>
 </nav>
 
-<div class="container">
+<!-- Page Content -->
+<main class="p-8">
     @yield('content')
-</div>
+</main>
 
 </body>
 </html>

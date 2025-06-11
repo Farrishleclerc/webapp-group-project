@@ -36,9 +36,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
 
     Route::middleware('auth:admin')->group(function () {
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        })->name('dashboard');
+        Route::get('/dashboard', [AdminCrudController::class, 'dashboard'])->name('dashboard');
 
         // ✅ Fix: use name('indexadmin') and name('editadmin') to match Blade
         Route::prefix('users')->name('users.')->group(function () {

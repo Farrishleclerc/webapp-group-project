@@ -47,4 +47,16 @@ class AdminCrudController extends Controller
         Contact::destroy($id);
         return back()->with('success', 'Message deleted.');
     }
+
+    public function dashboard()
+{
+    $userCount = \App\Models\User::count();
+    $contactCount = \App\Models\Contact::count();
+
+    // For example: assume target capacity = 100 users, target engagement = 50 messages
+    $userPercentage = $userCount ? min(100, round(($userCount / 100) * 100)) : 0;
+    $contactPercentage = $contactCount ? min(100, round(($contactCount / 50) * 100)) : 0;
+
+    return view('admin.dashboard', compact('userCount', 'contactCount', 'userPercentage', 'contactPercentage'));
+}
 }

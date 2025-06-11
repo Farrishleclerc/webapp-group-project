@@ -40,16 +40,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
             return view('admin.dashboard');
         })->name('dashboard');
 
+        // ✅ Fix: use name('indexadmin') and name('editadmin') to match Blade
         Route::prefix('users')->name('users.')->group(function () {
-            Route::get('/', [AdminCrudController::class, 'index'])->name('index');
+            Route::get('/', [AdminCrudController::class, 'indexadmin'])->name('indexadmin');
             Route::get('/create', [AdminCrudController::class, 'create'])->name('create');
             Route::post('/', [AdminCrudController::class, 'store'])->name('store');
-            Route::get('/{user}/edit', [AdminCrudController::class, 'edit'])->name('edit');
+            Route::get('/{user}/edit', [AdminCrudController::class, 'editadmin'])->name('editadmin');
             Route::put('/{user}', [AdminCrudController::class, 'update'])->name('update');
             Route::delete('/{user}', [AdminCrudController::class, 'destroy'])->name('destroy');
         });
 
-        // Admin contact messages management (optional)
         Route::prefix('contacts')->name('contacts.')->group(function () {
             Route::get('/', [AdminCrudController::class, 'contactMessages'])->name('index');
             Route::delete('/{contact}', [AdminCrudController::class, 'destroyContact'])->name('destroy');

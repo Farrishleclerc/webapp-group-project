@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.adminlayout')
 
 @section('content')
     <h2>Edit User</h2>

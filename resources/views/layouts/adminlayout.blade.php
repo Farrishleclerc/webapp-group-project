@@ -30,7 +30,7 @@
 <nav>
     <span>Admin Dashboard</span>
     <a href="{{ route('admin.dashboard') }}">Home</a>
-    <a href="{{ route('admin.users.index') }}">Users</a>
+    <a href="{{ route('admin.users.indexadmin') }}">Users</a>
     <a href="{{ route('admin.contacts.index') }}">Messages</a>
     <form class="logout" action="{{ route('admin.logout') }}" method="POST" style="display:inline;">
         @csrf

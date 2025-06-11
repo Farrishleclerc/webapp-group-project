@@ -1,7 +1,7 @@
 @extends('layouts.adminlayout')
 
 @section('content')
-    <h2>Booking List</h2>
+    <h2>Booking & Payment List</h2>
 
     <style>
         table {
@@ -45,12 +45,17 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Booking ID</th>
                 <th>User ID</th>
                 <th>Package</th>
+                <th>Sport</th>
                 <th>Start Date</th>
                 <th>End Date</th>
+                <th>Start Time</th>
+                <th>Duration</th>
                 <th>Court</th>
+                <th>Payment Status</th>
+                <th>Amount</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -59,12 +64,16 @@
                 <tr>
                     <td>{{ $booking->id }}</td>
                     <td>{{ $booking->user_id }}</td>
-                    <td>{{ $booking->package }}</td>
-                    <td>{{ $booking->start_date }}</td>
-                    <td>{{ $booking->end_date }}</td>
-                    <td>{{ $booking->court }}</td>
+                    <td>{{ $booking->package ?? 'N/A' }}</td>
+                    <td>{{ $booking->sport ?? 'N/A' }}</td>
+                    <td>{{ $booking->start_date ?? 'N/A' }}</td>
+                    <td>{{ $booking->end_date ?? 'N/A' }}</td>
+                    <td>{{ $booking->start_time ?? 'N/A' }}</td>
+                    <td>{{ $booking->duration ?? 'N/A' }}</td>
+                    <td>{{ $booking->court ?? 'N/A' }}</td>
+                    <td>{{ $booking->payment->payment_status ?? 'N/A' }}</td>
+                    <td>{{ $booking->payment->amount ?? 'N/A' }}</td>
                     <td>
-                        <a href="{{ route('admin.bookings.edit', $booking->id) }}" class="btn btn-edit">Edit</a>
                         <form method="POST" action="{{ route('admin.bookings.destroy', $booking->id) }}" style="display:inline;">
                             @csrf
                             @method('DELETE')

@@ -5,6 +5,7 @@
     <title>@yield('title', 'FitPlex Admin Panel')</title>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-gray-50 font-sans">
 
@@ -18,7 +19,7 @@
     <div class="flex items-center space-x-6 text-white font-medium">
         <a href="{{ route('admin.dashboard') }}" class="hover:text-yellow-300">Dashboard</a>
         <a href="{{ route('admin.users.indexadmin') }}" class="hover:text-yellow-300">Users</a>
-        <a href="{{ route('admin.bookings.index') }}" class="hover:text-yellow-300">Bookings</a>
+        <a href="{{ route('admin.bookings.index') }}" class="hover:text-yellow-300">B&P</a>
         <a href="{{ route('admin.contacts.index') }}" class="hover:text-yellow-300">Messages</a>
 
         <!-- Logout -->

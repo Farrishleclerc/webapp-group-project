@@ -3,41 +3,43 @@
 @section('title', 'Package Booking - FitPlex')
 
 @section('content')
-<div class="min-h-screen bg-yellow-100 py-10 px-4">
-    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-6">
-        <h2 class="text-xl font-bold italic mb-6">Package Booking</h2>
+<div class="min-h-screen bg-yellow-100 flex items-center justify-center py-12 px-4">
+    <div class="w-full max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 italic">🏋️‍♀️ Package Booking</h2>
+            <a href="{{ url()->previous() }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition text-sm">← Back</a>
+        </div>
 
-        <form method="POST" action="{{ route('booking.submit') }}">
+        <form method="POST" action="{{ route('booking.submit') }}" class="space-y-6">
             @csrf
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm font-semibold">Package:</label>
-                    <input type="text" name="package" class="w-full border rounded px-3 py-2" value="Package {{ $data['package'] }}" readonly>
-                </div>
 
-                <div>
-                    <label class="block text-sm font-semibold">Start Date:</label>
-                    <input type="date" name="start_date" id="start_date" class="w-full border rounded px-3 py-2" required>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-semibold">End Date:</label>
-                    <input type="text" id="end_date" name="end_date" class="w-full border rounded px-3 py-2 bg-gray-100" readonly>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-semibold">Court:</label>
-                    <input type="text" class="w-full border rounded px-3 py-2" name="court" value="{{ $data['court'] }}" readonly>
-                </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Package</label>
+                <input type="text" name="package" class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-gray-100 text-gray-700" value="Package {{ $data['package'] }}" readonly>
             </div>
 
-            <div class="mt-6 flex gap-4">
-                <a href="{{ url()->previous() }}" class="bg-white border border-gray-400 px-4 py-2 rounded">Back</a>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
+                <input type="date" name="start_date" id="start_date" class="w-full border border-gray-300 rounded-lg px-4 py-2" required>
+            </div>
 
-<form method="POST" action="{{ route('payment.process') }}">
-    @csrf
-    <button type="submit">Pay Now</button>
-</form>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">End Date</label>
+                <input type="text" id="end_date" name="end_date" class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-gray-100" readonly>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Court</label>
+                <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-gray-100 text-gray-700" name="court" value="{{ $data['court'] }}" readonly>
+            </div>
+
+            <div class="flex justify-end mt-6">
+                <form method="POST" action="{{ route('payment.process') }}">
+                    @csrf
+                    <button type="submit" class="inline-block px-6 py-2 bg-green-600 text-white font-semibold rounded-lg shadow hover:bg-green-700 transition">
+                        💳 Confirm & Pay
+                    </button>
+                </form>
             </div>
         </form>
     </div>

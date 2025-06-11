@@ -2,49 +2,78 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ContactController; // Added
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\AdminCrudController;
 use App\Http\Controllers\BookingController;
+
+/*
+|--------------------------------------------------------------------------
+| Public Routes
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/', function () {
     return view('mainpage');
 })->name('home');
 
-// User auth
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
+// User Auth Routes (for guests only)
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
-// Contact routes
+    Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+    Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
+});
+
+// Contact Page Routes
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-// Booking homepage (choose type)
+// Booking homepage (choose booking type)
 Route::get('/booking', function () {
-    return view('booking.booking'); // this points to: resources/views/booking/booking.blade.php
+    return view('booking.booking');
 })->name('booking');
 
-// Package Booking
-Route::get('/packagebooking/{package}', [BookingController::class, 'showBooking'])->name('package.booking');
-Route::post('/submit-booking', [BookingController::class, 'submitBooking'])->name('booking.submit');
+// User Logout Route (only accessible when logged in)
+Route::middleware('auth')->post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Single Booking
-Route::get('/singlebooking', [BookingController::class, 'showSingleBooking'])->name('single.booking');
-Route::post('/singlebooking/submit', [BookingController::class, 'submitSingleBooking'])->name('booking.single.submit');
+/*
+|--------------------------------------------------------------------------
+| Authenticated User Routes (Booking-related)
+|--------------------------------------------------------------------------
+*/
+Route::middleware('auth')->group(function () {
+    // Package Booking
+    Route::get('/packagebooking/{package}', [BookingController::class, 'showBooking'])->name('package.booking');
+    Route::post('/submit-booking', [BookingController::class, 'submitBooking'])->name('booking.submit'); // ✅ FIXED
 
+    // Single Booking
+    Route::get('/singlebooking', [BookingController::class, 'showSingleBooking'])->name('single.booking');
+    Route::post('/singlebooking/submit', [BookingController::class, 'submitSingleBooking'])->name('booking.single.submit');
+});
 
-// Admin auth
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [AdminAuthController::class, 'login'])->name('login.submit');
-    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+    // Admin login routes (guests only)
+    Route::middleware('guest:admin')->group(function () {
+        Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
+        Route::post('/login', [AdminAuthController::class, 'login'])->name('login.submit');
+    });
 
+    // Admin logout route
+    Route::middleware('auth:admin')->post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+
+    // Admin protected routes
     Route::middleware('auth:admin')->group(function () {
+        // Dashboard
         Route::get('/dashboard', [AdminCrudController::class, 'dashboard'])->name('dashboard');
 
-        // ✅ Fix: use name('indexadmin') and name('editadmin') to match Blade
+        // User Management
         Route::prefix('users')->name('users.')->group(function () {
             Route::get('/', [AdminCrudController::class, 'indexadmin'])->name('indexadmin');
             Route::get('/create', [AdminCrudController::class, 'create'])->name('create');
@@ -54,6 +83,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::delete('/{user}', [AdminCrudController::class, 'destroy'])->name('destroy');
         });
 
+        // Contact Messages
         Route::prefix('contacts')->name('contacts.')->group(function () {
             Route::get('/', [AdminCrudController::class, 'contactMessages'])->name('index');
             Route::delete('/{contact}', [AdminCrudController::class, 'destroyContact'])->name('destroy');

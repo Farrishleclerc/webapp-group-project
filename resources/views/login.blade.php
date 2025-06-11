@@ -150,6 +150,10 @@
     <button type="submit">Sign In</button>
 
     <div class="register-section">
+        <p>Want to go back?</p>
+        <a href="{{ route('home') }}" class="register-link">Back to Main Page</a>
+</div>
+    <div class="register-section">
         <p>Don't have an account? <a href="{{ route('register') }}" class="register-link">Register here</a></p>
     </div>
 </form>

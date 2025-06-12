@@ -15,8 +15,6 @@
     With easy access and efficient management, you can focus on what you love the most: playing your favorite sports.
   </p>
 
-  <button class="bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-semibold px-6 py-2 rounded-full shadow-md transition-colors">
-    Get Started
-  </button>
+
 </div>
 @endsection

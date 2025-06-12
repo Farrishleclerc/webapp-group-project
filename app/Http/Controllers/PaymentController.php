@@ -28,7 +28,7 @@ class PaymentController extends Controller
         'user_id' => Auth::id(),
         'booking_id' => $booking->id,
         'payment_status' => 'paid',
-        'amount' => 100.00 // or calculate based on booking
+        'amount' => 5.00 // or calculate based on booking
     ]);
 
     return view('thankyou', ['booking' => $booking]);
